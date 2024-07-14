@@ -14,12 +14,12 @@ import javax.inject.Inject
 @HiltViewModel
 class ProductsViewModel @Inject constructor(private val repository: Repository) : ViewModel() {
 
-    private var _productsLiveData = MutableLiveData<Resource<Product>>()
+    private var _productsLiveData = MutableLiveData<Resource<List<Product>?>>()
     val productsLiveData get() = _productsLiveData
-    private var saveStateProducts: Resource<Product>?=null
+    private var saveStateProducts: Resource<List<Product>?>?=null
 
 
-    fun getMealsDetails() {
+    fun getProductsDetails() {
         saveStateProducts?.let {
             productsLiveData.postValue(it)
             return
@@ -28,8 +28,8 @@ class ProductsViewModel @Inject constructor(private val repository: Repository) 
             try {
                 val response = repository.getProducts()
                 if (response.products.isNotEmpty()) {
-                    _productsLiveData.postValue(Resource.Success(response.products[0]))
-                    saveStateProducts = Resource.Success(response.products[0])
+                    _productsLiveData.postValue(Resource.Success(response.products))
+                    saveStateProducts = Resource.Success(response.products)
 
                 } else {
                     _productsLiveData.postValue(Resource.Error(response.toString()))
