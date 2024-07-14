@@ -62,6 +62,9 @@ dependencies {
     // sdp
     implementation(libs.sdp.android)
 
+    // Glide
+    implementation(libs.glide)
+
     // Coroutines
     implementation(libs.androidx.lifecycle.viewmodel.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
