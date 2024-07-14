@@ -5,5 +5,5 @@ import retrofit2.http.GET
 interface ApiCalls {
 
     @GET("products")
-    suspend fun getRandomMeal(): ModelProducts
+    suspend fun getProducts(): ModelProducts
 }
