@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/card_view_style"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/imgMeal"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/route_logo"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHeight_percent="0.55"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <TextView
+            android:id="@+id/tv_product_name"
+            style="@style/product_name_style"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="@id/imgMeal"
+            app:layout_constraintTop_toBottomOf="@id/imgMeal"
+            tools:text="Nike Air Jordan" />
+
+        <TextView
+            android:id="@+id/tv_product_thumb"
+            style="@style/product_name_style"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_product_name"
+            tools:text="Nike Air Jordan s;flgkdjgvklmokdfjkvmodfijvmkmoidsmfokvmdfok;sldmvldskvm" />
+
+        <TextView
+            android:id="@+id/tv_price_type"
+            style="@style/product_price_type_style"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/egp"
+            app:layout_constraintStart_toStartOf="@id/tv_product_thumb"
+            app:layout_constraintTop_toBottomOf="@id/tv_product_thumb" />
+
+        <TextView
+            android:id="@+id/tv_price"
+            style="@style/product_price_style"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="@id/tv_price_type"
+            app:layout_constraintStart_toEndOf="@id/tv_price_type"
+            app:layout_constraintTop_toTopOf="@id/tv_price_type"
+            tools:text="1000" />
+
+        <TextView
+            android:id="@+id/tv_old_price"
+            style="@style/old_price_style"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="@id/tv_price_type"
+            app:layout_constraintStart_toEndOf="@id/tv_price"
+            app:layout_constraintTop_toTopOf="@id/tv_price_type"
+            tools:text="1000" />
+
+        <TextView
+            android:id="@+id/tv_review"
+            style="@style/tv_review_style"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/review"
+            app:layout_constraintStart_toStartOf="@id/tv_price_type"
+            app:layout_constraintTop_toBottomOf="@id/tv_price_type" />
+
+        <TextView
+            android:id="@+id/tv_review_count"
+            style="@style/tv_review_count_style"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toEndOf="@id/tv_review"
+            app:layout_constraintTop_toBottomOf="@id/tv_price_type"
+            tools:text="(4.8)" />
+
+        <ImageView
+            android:id="@+id/rating_star"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/_3sdp"
+            android:src="@drawable/ic_star"
+            app:layout_constraintBottom_toBottomOf="@id/tv_review_count"
+            app:layout_constraintStart_toEndOf="@id/tv_review_count"
+            app:layout_constraintTop_toTopOf="@id/tv_review" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_add"
+            style="@style/btn_add_style"
+            android:layout_width="@dimen/_21sdp"
+            android:layout_height="@dimen/_30sdp"
+            app:icon="@drawable/ic_add"
+            app:layout_constraintBottom_toBottomOf="@id/tv_review_count"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tv_review" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_favoriets"
+            style="@style/btn_favoriets_style"
+            android:layout_width="@dimen/_21sdp"
+            android:layout_height="@dimen/_30sdp"
+            app:icon="@drawable/ic_favorite_border"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.material.card.MaterialCardView>
