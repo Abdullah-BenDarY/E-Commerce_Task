@@ -22,6 +22,7 @@ class ProductsFragment : BaseFragment<FragmentProductsBinding>(FragmentProductsB
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        showLoading()
         observe()
         productsViewModel.getProductsDetails()
     }
@@ -33,12 +34,14 @@ class ProductsFragment : BaseFragment<FragmentProductsBinding>(FragmentProductsB
                 is Resource.Success -> {
                     finishLoading()
                     it.data?.let {
+                        finishLoading()
                         setContentInViews(it)
                     }
                 }
 
                 is Resource.Error -> {
                     it.message?.let { message ->
+                        finishLoading()
                         showToast(message)
                     }
                 }
@@ -48,10 +51,18 @@ class ProductsFragment : BaseFragment<FragmentProductsBinding>(FragmentProductsB
 
     override fun showLoading() {
         super.showLoading()
+        binding.apply {
+            g1.visibility = View.GONE
+            progresBar.visibility = View.VISIBLE
+        }
     }
 
     override fun finishLoading() {
         super.finishLoading()
+        binding.apply {
+            g1.visibility = View.VISIBLE
+            progresBar.visibility = View.GONE
+        }
     }
 
     private fun setContentInViews(product:List<Product>){

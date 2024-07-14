@@ -7,7 +7,7 @@ data class ModelProducts(
     val total: Int
 )
 
-data class Product(
+    data class Product(
     val availabilityStatus: String,
     val brand: String,
     val category: String,

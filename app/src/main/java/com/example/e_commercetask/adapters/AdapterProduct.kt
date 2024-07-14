@@ -38,12 +38,12 @@ class AdapterProduct: RecyclerView.Adapter<AdapterProduct.Holder>(){
         fun bind(productList: Product) {
             binding.apply {
                 Glide.with(binding.root.context)
-                    .load(productList.images)
+                    .load(productList.images[0])
                     .into(imgProduct)
                 tvProductName.text = productList.title
                 tvProductThumb.text = productList.description
                 tvPrice.text = productList.price.toString()
-                tvOldPrice.text = productList.discountPercentage.toString()
+                tvOldPrice.text = (productList.discountPercentage.toString() + "%")
                 tvReviewCount.text = productList.rating.toString()
             }
         }
