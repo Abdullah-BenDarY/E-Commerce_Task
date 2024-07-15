@@ -10,9 +10,9 @@ import com.example.e_commercetask.pojo.Product
 class AdapterProduct: RecyclerView.Adapter<AdapterProduct.Holder>(){
 
     var productList: List<Product>? = null
-    private lateinit var onClick: (String) -> Unit?
-    fun setOnClick(onClick: (String) -> Unit) {
-        this.onClick = onClick}
+//    private lateinit var onClick: (String) -> Unit?
+//    fun setOnClick(onClick: (String) -> Unit) {
+//        this.onClick = onClick}
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): Holder {
         val binding = ItemProductsBinding.inflate(LayoutInflater.from(parent.context), parent, false)
@@ -29,11 +29,11 @@ class AdapterProduct: RecyclerView.Adapter<AdapterProduct.Holder>(){
 
     inner class Holder(private val binding: ItemProductsBinding) : RecyclerView.ViewHolder(binding.root) {
 
-        init {
-            binding.root.setOnClickListener {
-                onClick.invoke(productList!![layoutPosition].id.toString())
-            }
-        }
+//        init {
+//            binding.root.setOnClickListener {
+//                onClick.invoke(productList!![layoutPosition].id.toString())
+//            }
+//        }
 
         fun bind(productList: Product) {
             binding.apply {
