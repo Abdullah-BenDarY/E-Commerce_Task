@@ -16,6 +16,8 @@ class ProductsFragment : BaseFragment<FragmentProductsBinding>(FragmentProductsB
     private val productsViewModel : ProductsViewModel by viewModels()
     private val adapterProduct = AdapterProduct()
 
+
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         showLoading()
@@ -24,7 +26,6 @@ class ProductsFragment : BaseFragment<FragmentProductsBinding>(FragmentProductsB
     }
 
     override fun observe() {
-        super.observe()
         productsViewModel.productsLiveData.observe(viewLifecycleOwner) {it ->
             when (it) {
                 is Resource.Success -> {
@@ -46,7 +47,6 @@ class ProductsFragment : BaseFragment<FragmentProductsBinding>(FragmentProductsB
     }
 
     override fun showLoading() {
-        super.showLoading()
         binding.apply {
             g1.visibility = View.GONE
             progresBar.visibility = View.VISIBLE
@@ -54,7 +54,6 @@ class ProductsFragment : BaseFragment<FragmentProductsBinding>(FragmentProductsB
     }
 
     override fun finishLoading() {
-        super.finishLoading()
         binding.apply {
             g1.visibility = View.VISIBLE
             progresBar.visibility = View.GONE
